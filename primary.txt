@@ -4,4 +4,8 @@ this is the third file added to my project
 thi is last file in project 
 
 
+<<<<<<< HEAD
 outdorr
+=======
+outdorr tours welcome of
+>>>>>>> short
