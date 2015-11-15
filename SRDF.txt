@@ -1,9 +1,9 @@
-symcfg -sid 20 list -rdfg 10 -rdfa
+symcfg _sid 20 list -rdfg 10 -rdfa
 
-symrdf -sid 20 list -rdfg 10
+symrdf _sid 20 list -rdfg 10
 
 
-symrdf addgrp -label temp -sid 20 -remote_sid 30 -dir 7h,10h -remote_dir 7h,10h -rdfg 5 -remote_rdfg 5
+symrdf addgrp -label temp _sid 20 -remote_sid 30 -dir 7h,10h -remote_dir 7h,10h -rdfg 5 -remote_rdfg 5
 
 
 
@@ -26,11 +26,11 @@ Method 2 :
 
 symdg create clonedg -type regular
 
-# symld -sid 1234 -g clonedg add dev SRC001 1AA1 
+# symld _sid 1234 -g clonedg add dev SRC001 1AA1 
 OR # symld -sid 1234 -g clonedg addall dev -range 1AA1:1AA3
 
-# symld -sid 1234 -g clonedg add dev TGT001 2BB3 -tgt 
-OR # symld -sid 1234 -g clonedg addall dev -range 2BB1:2BB1 -tgt
+# symld _sid 1234 -g clonedg add dev TGT001 2BB3 -tgt 
+OR # symld _sid 1234 -g clonedg addall dev -range 2BB1:2BB1 -tgt
 
 symclone -g clonedg create  -tgt
 
@@ -50,14 +50,14 @@ clonepair.txt
 source    Target 
 1234      5678
 
-symlone -sid  234 -f clonepair.txt create -tgt
-symlone -sid  234 -f clonepair.txt activate -tgt
-symclone -sid 234 -f clonepair.txt query
+symlone _sid  234 -f clonepair.txt create -tgt
+symlone _sid  234 -f clonepair.txt activate -tgt
+symclone _sid 234 -f clonepair.txt query
 
 
 
 ########################SRDF############################
-symrdf -sid 20 createpair -rdfg 5 -f pair.txt -type r1 -est
+symrdf _sid 20 createpair -rdfg 5 -f pair.txt -type r1 -est
 
 
 pair.txt
@@ -69,6 +69,6 @@ pair.txt
 1245  2455
 1245  2245
 
-symrdf -sid 20 -rdfg 5 query -f pair.txt 
+symrdf _sid 20 -rdfg 5 query -f pair.txt 
 
 
